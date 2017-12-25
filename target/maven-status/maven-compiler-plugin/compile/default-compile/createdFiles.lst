@@ -1,0 +1,5 @@
+com/simpleio/basicauth/AppAuthenticator.class
+Resource.class
+com/simpleio/basicauth/User.class
+SimpleIOApplication.class
+com/simpleio/basicauth/AppAuthorizer.class
