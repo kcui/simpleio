@@ -6,11 +6,15 @@ basic annotation, POST methods that echo back
 
 ## Build/run
 
+Just Docker:
+
 `docker build .`
 
 `docker run -p 8080:8080 -p 8081:8081 <image id>`
 
 p flags bind 8080 and 8081 (default Docker ports)
+
+To run the Docker container in the minikube VM, simply run `eval $(minikube docker-env)` before building and running the container.
 
 ## Example usages
 
