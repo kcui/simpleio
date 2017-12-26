@@ -14,7 +14,13 @@ Just Docker:
 
 p flags bind 8080 and 8081 (default Docker ports)
 
-To run the Docker container in the minikube VM, simply run `eval $(minikube docker-env)` before building and running the container.
+Minikube:
+
+To run the Docker container in the minikube VM, ensure that the VM is running with minikube start, then simply run `eval $(minikube docker-env)` before building and running the container:
+
+![screenshot](https://i.imgur.com/OXERe9R.png)
+
+To revert back to Docker without the minikube host, run `eval $(minikube docker-env -u)`.
 
 ## Example usages
 
@@ -22,7 +28,7 @@ To run the Docker container in the minikube VM, simply run `eval $(minikube dock
 `You passed hello`
 
 `> curl -X POST -d 'message=helloparam' localhost:8080/param`
-`You posted hello`
+`You posted helloparam`
 
 `> curl -X POST -d 'message=hellopost' localhost:8080/post`
 `You posted hellopost`
