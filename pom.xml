@@ -19,6 +19,17 @@
       <artifactId>dropwizard-auth</artifactId>
       <version>1.2.2</version>
     </dependency>
+
+    <dependency>
+      <groupId>it.unimi.dsi</groupId>
+      <artifactId>sux4j</artifactId>
+      <version>4.2.0</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+      <version>23.6-jre</version>
+    </dependency>
   </dependencies>
 
   <build>
