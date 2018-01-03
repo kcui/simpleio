@@ -61,14 +61,10 @@ public class SimpleIOApplication extends Application<Configuration> {
           Funnels.unencodedCharsFunnel(),
           NUM_ELEMENTS,
           0.01);
-        ArrayList<String> l = new ArrayList<String>();
-        ArrayList<String> randoms = new ArrayList<String>();
         String uuid = "";
         for (int j = 0; j < NUM_ELEMENTS; j++) {
           uuid = UUID.randomUUID().toString().replace("-", "");
           bf.put(uuid);
-          l.add(uuid);
-          randoms.add(uuid);
         }
       } finally {
         context.stop();
@@ -83,13 +79,11 @@ public class SimpleIOApplication extends Application<Configuration> {
       Funnels.unencodedCharsFunnel(),
       NUM_ELEMENTS,
       0.01);
-    ArrayList<String> l = new ArrayList<String>();
     ArrayList<String> randoms = new ArrayList<String>();
     String uuid = "";
     for (int i = 0; i < NUM_ELEMENTS; i++) {
       uuid = UUID.randomUUID().toString().replace("-", "");
       bf.put(uuid);
-      l.add(uuid);
       randoms.add(uuid);
     }
     MetricRegistry mr = new MetricRegistry();
@@ -118,12 +112,10 @@ public class SimpleIOApplication extends Application<Configuration> {
       Timer.Context context = timer.time();
       try {
         ArrayList<String> l = new ArrayList<String>();
-        ArrayList<String> randoms = new ArrayList<String>();
         String uuid = "";
         for (int j = 0; j < NUM_ELEMENTS; j++) {
           uuid = UUID.randomUUID().toString().replace("-", "");
           l.add(uuid);
-          randoms.add(uuid);
         }
         GOVMinimalPerfectHashFunction<String> mph = new Builder<String>().keys(l)
           .transform(TransformationStrategies.utf16()).signed(24).build();
@@ -164,17 +156,15 @@ public class SimpleIOApplication extends Application<Configuration> {
   public static void measureMPHMemory() throws Exception {
     int totalbits = 0;
     ArrayList<String> l = new ArrayList<String>();
-    ArrayList<String> randoms = new ArrayList<String>();
     String uuid = "";
     for (int i = 0; i < NUM_ELEMENTS; i++) {
       uuid = UUID.randomUUID().toString().replace("-", "");
       l.add(uuid);
-      randoms.add(uuid);
     }
     GOVMinimalPerfectHashFunction<String> mph = new Builder<String>().keys(l)
       .transform(TransformationStrategies.utf16()).signed(24).build();
     totalbits += mph.numBits();
-    System.out.println("avg memory, in bits: "  + (double) totalbits / NUM_REPS);
+    System.out.println("avg memory, in bits: " + (double) totalbits / NUM_REPS);
   }
 
   @Override
